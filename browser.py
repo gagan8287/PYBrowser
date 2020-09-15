@@ -9,7 +9,6 @@ from PyQt5.QtGui import QIcon,QPixmap
 from datetime import datetime as dt
 
 class window(QMainWindow):
-    """docstring for window."""
 
     def __init__(self):
         super(window, self).__init__()
@@ -23,11 +22,10 @@ class window(QMainWindow):
 
     def createWindow(self):
         self.setGeometry(self.left,self.top,self.width,self.height)
-        self.setWindowTitle("Class Testing")
+        self.setWindowTitle("Browser")
         w = self.size()
 
         button = QPushButton('PyQt5 button', self)
-        button.setToolTip('This is an example button')
         button.move(100,70)
         button.clicked.connect(QApplication.instance().quit)
 
@@ -362,7 +360,6 @@ if __name__ == "__main__":
     #pp.setStyle('Breeze')
 
     app.setStyleSheet("QTabWidget::right-corner{top:-1px;} QTabWidget::pane { /* The tab widget frame */  }  QTabWidget::tab-bar{ /* move to the right by 5px */}/* Style the tab using the tab sub-control. Note that it reads QTabBar _not_ QTabWidget */QTabBar{ qproperty-drawBase: 0;background-color:#004551;}QTabBar::tab {background:#004551; color:white;font-size:12px;border:1px solid black;/* same as the pane color */height:25px;padding:2px; width:150px;}QTabBar::tab:hover {background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #fafafa, stop: 0.4 #f4f4f4, stop: 0.5 #e7e7e7, stop: 1.0 #fafafa);}QTabBar::tab:selected {background-color:#00596b;/* same as pane color */}QTabBar::tab:!selected {/* make non-selected tabs look smaller */}QMainWindow{background-color:#00596b;}QTabBar::scroller{width:50px;}QTabBar::tab:top{margin-left:-1px;}QTabBar::tab:top:selected {border-bottom-color:#00596b;border-top-color:#00596b;}QLineEdit{height:25px; padding-left:20px;padding-right:20px;}QTabBar::close-button{background-image:url('closetab.png');background-position:0px 0px;margin-top:-2px;}QTabBar::close-button:!selected{background-image:url('closetabnotselected.png');}")#bf0b62
-    # app.setStyleSheet("QTabWidget::pane {border: 1px solid black;    background: white;}QTabWidget::tab-bar:top {    top: 1px;}QTabBar::tab {    border: 1px solid black;}QTabBar::tab:selected {    background: white;}QTabBar::tab:!selected {    background: silver;}QTabBar::tab:!selected:hover {    background: #999;}QTabBar::tab:top:!selected {    margin-top: 3px;}QTabBar::tab:top, QTabBar::tab:bottom {    min-width: 8ex;    margin-right: -1px;    padding: 5px 10px 5px 10px;}QTabBar::tab:top:selected {    border-bottom-color: none;}")
     window = window()
 
     sys.exit(app.exec_())
